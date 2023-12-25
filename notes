@@ -1,0 +1,16 @@
+This is to react basic.
+Igniting the app.
+1- npm is the biggest package manager.
+2- npm init  - this creates package.json file where we have all necessary things or it just keeps the track of all dependencies.
+3- when we do create react app web pack is used as bundler.We need to bundle our file when we want to put it in production.
+4- but now as we r using npm we will use parser as bundler.
+5 - npm install -D parcel
+-> two type of dependency we can install one is dev depedency and there r normal dependency.
+dev depedency - is used while dependency
+normal - used in production or dev anywhere.
+6 - "^2.8.3" this is ^ carrot this is to keep the dependency even there are minor updates.
+Ex- 2.8.4 can be "^2.8.3" in package.json
+7 - package.lock-json keeps exact track of version
+
+8- parcel can have its own dependecies this is called transitive dependency, that's why we got so many dependencies when we installed parcel.
+9 - if u see the node module and see any package it will have its own package.json as it can have their own dependency.
