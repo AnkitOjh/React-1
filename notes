@@ -14,3 +14,25 @@ Ex- 2.8.4 can be "^2.8.3" in package.json
 
 8- parcel can have its own dependecies this is called transitive dependency, that's why we got so many dependencies when we installed parcel.
 9 - if u see the node module and see any package it will have its own package.json as it can have their own dependency.
+10 - just like we have npm we npx
+npm is installing
+npx is for execution.
+11 - npx parcel index.html will execute parcel.
+12 - tell if this is not a browser script this is considered as a module.
+#parcel
+-Dev Build
+-local server
+- HMR - Hot Module Replacement
+- File Watching Algorithm - written in c++
+- caching - Faster build
+- Image Optimization
+- Minification
+- Bundling
+- compress
+- code splitting
+- Differential Bundling - support older browser
+- it creates different build for production and develop.
+read parcel docs mf
+
+13- i have removed main from package.json as we give entry point when we do code.
+
