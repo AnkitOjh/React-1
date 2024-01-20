@@ -36,3 +36,45 @@ read parcel docs mf
 
 13- i have removed main from package.json as we give entry point when we do code.
 
+
+1- they replace html thing if u have written.
+2 - JSX-it is html like syntax.
+const jsxHeading = <h1>Namaste react using jsx</h1>.
+3 - 2 ways to create to create html
+with react and jsx.
+4 - Js engine understands ES6(it can be any version) or echmascript
+5 - code is transpilled before it goes to js engine by parcel - parcel has babel which is used to transpile.Babel was installed when we haev installed babel.
+6 - the jsx ---> react.createElement ---> react element ----> html element.this conversion is done by babel.
+7- function component is js function thaT RETURN react element.
+
+8- A component inside the other component is called component composition.
+9 - {} u can write any js code inside this which can be opened in <div></div> fo react functional component.
+10- the {} the thing inside {} or jsx is sanitized before rendering as security.  
+
+
+
+1 - create div. for different things.
+2 - config driven ui 
+- our website is driven by data, the ui is driven by data or config.they will send all data to be displayed on ui acording to area or location maybe.
+* when u wan to pass js obeject u have to use {}.
+3- if it is default export then import resObj or import {resObj}.
+4 -  Default export can export only one thing from a js file.
+5 - when state variable changes react re-renders the variable.
+
+
+
+
+React concepts lets goooo
+
+Reconciliation Algorithm(React Fibre)
+-------------------------------------
+
+React.createElement('h1') => this creates a react object which is virtual dom. when there is difference in virtual dom react re-renders the component.
+
+
+
+
+
+
+
+
