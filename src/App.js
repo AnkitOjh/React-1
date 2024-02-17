@@ -1,7 +1,15 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./component/Header";
 import Body from "./component/Body";
+import About from "./component/About";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Contact from "./component/Contact";
+import Error from "./component/Error";
+import { Outlet } from "react-router-dom";
+import RestaurantMenu from "./component/RestaurantMenu";
+
+const Grocery = lazy(() => import("./component/Grocery"));
 const styleCard = {
     backgroundColor: "#0f0f0f",
     
@@ -1923,15 +1931,45 @@ const RestaurantCard = (props) => {
 
 
 
-
 const AppLayout = () => {
     return (
         <div className="app">
             <Header/>
-            <Body/>
+            <Outlet/>
         </div>
     );
 }
+
+const appRouteConfig = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout/>,
+    children: [
+      {
+        path: "/",
+        element: <Body/>
+      },
+      {
+        path: "/about",
+        element: <About/>
+      },
+      {
+        path: "/contact",
+        element: <Contact/>
+      },
+      {
+        path: "/restaurants/:resId",
+        element: <RestaurantMenu/>
+      },
+      {
+        path: "/grocery",
+        element: <Suspense fallback = {<div>fallback</div>}><Grocery></Grocery></Suspense>
+      }
+    ],
+    errorElement: <Error/>
+
+  },
+])
 
  
 
@@ -1940,4 +1978,4 @@ const AppLayout = () => {
 
 // console.log(heading);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout/>);
+root.render(<RouterProvider router={appRouteConfig}></RouterProvider>);

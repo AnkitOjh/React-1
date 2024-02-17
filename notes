@@ -73,6 +73,92 @@ React.createElement('h1') => this creates a react object which is virtual dom. w
 
 
 
+1- shimmer ui - we load fake page until the actual data is loaded.
+2 - whenever the useState variable is changed the react component re-renders.
+3 - never declare useState in condition,for loop or function.
+
+Router
+
+1- Install React-router-dom
+2 - we have to create routing configuration.
+3 - createBrowserRouter - to define configuration.
+RouterProvider - to render the router configuration.
+4 - There are many router so read documentation.
+5 - useRouterError will catch the error and give u as obejct useRouterError()
+6 - Outlet is like a tunnel all childeren configuration will be conditionally rendered according to the path.
+7 - href will reload the next page.
+Link will not reload the the next page, so use Link provide by react router dom.
+
+*8 - a tag href does server side routing because the page reloads.Link does clint side routing as there is not page reload.
+
+Hooks:-
+1 - useParams used to extract param from url.
+2 - Link is component given by react router dom but behind the scene link is using anchor tag. 
+
+class based component:
+
+constructor(props){
+    super(props){
+        this.state= {
+            count1:2
+        }
+    }
+}
+this.setState({}) -> is used to state in functional component
+1 - whenever the class is 
+2 - flow in class component
+    - one component ->constructor -> render -> componentDidMount
+
+    if parent and child is there then:
+    - constructor -> render -> child constructor -> child render -> child componentDidMount -> parent componentDidMount
+
+3 - APi calls are made in componentDidMount
+
+    if parent has child1 and child2
+
+    - so p cons -> p render -> 1 cons -> 1 render -> 2 cons -> 2 render -> (DOM is updated with child1 and child2 )-> 1 mount -> 2 mount -> p mount.
+
+    - render over here is virtual dom updation.
+
+4 - https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/     - best diagram for react component life cycle.
+
+5 - see react batches all child1,child2 and then at once manupulates actual DOM as DOM manupulation is expensive .Render in this case means manupalating virtual dom.
+
+6 - useEffect(() => {
+    setInterval(() => {
+        console.log("namaste");
+    },1000);
+    return () => {
+        console.log("unmounting");   - this works like unmounting function.
+    }                       
+
+},[])
+console.log("render"); 
+
+7 - The useEffect hook expects the callback function to either return nothing or return a cleanup function. If you make the callback function async, it implicitly returns a promise, which is not the expected behavior. This could lead to unexpected behavior or errors in your component.
+
+8 - chunking,code splitting, dynamic bundling,lazy loading -> u have make or split your code into smaller chunks.
+
+
+CSS
+
+1- Material UI, Chakra UI, styled-component.
+2 - post css is a toll for transforming CSS with javascript.
+3 - tail wind css uses postcss
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

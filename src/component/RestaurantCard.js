@@ -9,12 +9,12 @@ const RestaurantCard = (props) => {
     const {name, cloudinaryImageId, sla, avgRating, cuisines, costForTwo} = resName?.info;
     console.log(resName.info.sla.slaString);
     return (
-        <div className="res-card" style={styleCard}>
-            <img className="res-logo" src={CDN_URL +resName.info.cloudinaryImageId}
+        <div className="m-4 p-4 w-[250px] rounded-lg" style={styleCard}>
+            <img className=" rounded-lg" src={CDN_URL +resName.info.cloudinaryImageId}
             />
-            <h3 className = "res-name">{name}</h3>
-            <h3 className = "res-name">{avgRating}  {sla.slaString}</h3>
-            <h4 className = "res-name">{cuisines.join(", ")}</h4>
+            <h3 className=" text-cyan-800 color">{name}</h3>
+            <h3 className=" text-cyan-800 color">{avgRating}  {sla.slaString}</h3>
+            <h4 className=" text-cyan-800 color">{cuisines.join(", ")}</h4>
         </div>
     )
 }
