@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withLabelComponent} from "./RestaurantCard";
 import resObj from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
@@ -12,6 +12,7 @@ const Body = () => {
     useEffect(() => {
         fetchData();
     },[]);
+    const RestaurantWithLabel = withLabelComponent(RestaurantCard);
     const fetchData = async () => {
         const data = await fetch(
             "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
@@ -55,7 +56,7 @@ const Body = () => {
                 </div>
             <div className="flex flex-wrap justify-center">
                 {
-                    filteredRestaurant.map((obj) => <Link to = {"/restaurants/"+obj.info.id}><RestaurantCard key = {obj.info.id} resName = {obj}/></Link>)
+                    filteredRestaurant.map((obj) => <Link to = {"/restaurants/"+obj.info.id}><RestaurantWithLabel key = {obj.info.id} resName = {obj}/></Link>)
                 }
             </div>
         </div>
